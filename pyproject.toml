@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "intrepyx"
 version = "0.1.0"
-description = ""
+description = "Python client for Lunar Lander"
 authors = ["Jean-Luc Tromparent <jlt@kezako.net>"]
 readme = "README.md"
 

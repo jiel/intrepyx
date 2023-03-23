@@ -19,11 +19,11 @@ class Brain(BaseModel):
                   break
         else:
              raise Exception("player not found in payload")
+
         if player.status != self.status:
             if self.previous:
                 print("prev", self.previous)
             print(self.cycle, player)
-            # NEW CYCLE !
             self.status = player.status
             self.cycle = 0
 
@@ -50,7 +50,7 @@ class Brain(BaseModel):
             if player.altitude < 300 and player.vy > 30:
                 thrust = True
 
-        action = LanderAction(thrust=thrust, rotate=rotate)
         self.cycle += 1
         self.previous = player
-        return action
+
+        return LanderAction(thrust=thrust, rotate=rotate)

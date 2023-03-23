@@ -30,5 +30,6 @@ class LanderRotation(IntEnum):
 class LanderAction(BaseModel):
     thrust: bool
     rotate: LanderRotation
+
     def export(self) -> Dict:
         return {"thrust": self.thrust, "rotate": self.rotate.value}
